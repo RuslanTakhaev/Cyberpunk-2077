@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap');
+@font-face {
+  font-family: "Archangelsk";;
+  src: url(./fonts/Archangelsk.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  }
+  body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  }
+  img {
+  display: block;
+  max-width: 100%;
+  }
+  $colorWhite:#FFFFFF;
+  $colorBlack:#000000;
+  $colorYellow:#F8F200;
+  $colorHex:#52BEDC;
+  $colorGrey:#777777;
+  
+
+  @mixin container() {
+  margin-left: calc(50% - 640px);
+  margin-right: calc(50% - 640px);
+  max-width: 1280px;
+  }
+  @mixin h2Fonts($color) {
+    font-family: "Archangelsk";
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 63px;
+    text-align: left;
+    color: $color;
+  }
+  @mixin spanFonts ($color) {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 34px;
+    color: $color;
+  }
+  @mixin pFonts ($color) {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+    color: $color;
+  }
+  @mixin placeholderFonts ($color) {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    color: $color;
+  }
+  @mixin littleFonts ($color) {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+    color: $color;
+  }
+header {
+  position: absolute;
+  width: 100%;
+}
+  .header {
+  @include container();
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    padding-top: 22px;
+  }
+  }
+  @keyframes sectionAnimation {
+    0% {
+      background-image: url(./img/img-1.png);
+    }
+    50% {
+      background-image: url(./img/img-2.png);
+    }
+    100% {
+      background-image: url(./img/img-3.png);
+    }
+  }
+  .animation {
+    animation-name: sectionAnimation;
+    max-width: 1920px;
+    height: 1000px;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+.clip-path {
+  @include container();
+  z-index: 1;
+  width: 624px;
+  height: 369px;
+  background: $colorYellow;
+  clip-path: polygon(10% 0, 100% 0, 100% 83%, 90% 100%, 0 100%, 0 17%);
+  h2 {
+    @include h2Fonts($colorBlack);
+    padding: 70px 70px 25px;
+  }
+  button {
+  margin-left: 70px;
+  padding: 19px 50px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  background:#000000;
+  color: $colorYellow;
+  cursor: pointer;
+  }
+  }
+.about-game {
+  @include container();
+  margin-top: 70px;
+  margin-bottom: 70px;
+  h2 {
+    @include h2Fonts($colorBlack);
+    padding-bottom: 25px;
+    padding-right: 284px;
+  }
+  p {
+    @include pFonts($colorGrey);
+    padding-bottom: 70px;
+    padding-right: 328px;
+  span {
+    @include spanFonts($colorHex);}
+  }
+}
+.about-game__img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.about-game__img__1 {
+  padding-bottom: 32px;
+}
+.play-win{
+  position: relative;
+  background: $colorBlack;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url(./img/before.png);
+  }
+  }
+ .play-win__block {
+  @include container();
+  padding-top: 70px;
+ }
+ .play-win__block__1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  img {
+    margin-top: 15px;
+  }
+  h2 {
+    @include h2Fonts($colorWhite);
+    padding: 70px 0 39px 32px;
+  }
+  p {
+    @include pFonts($colorWhite);
+    padding-right: 328px;
+  }
+  span {
+    @include spanFonts($colorHex);
+  }
+ }
+.play-win__block__2 {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+}
+.play-win__block__2__form {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  }
+.play-win__form__input {
+  @include placeholderFonts ($colorWhite);
+  width: 460px;
+  height: 35px;
+  background: #000000;
+  margin-bottom: 35px;
+  border: 1px solid black;
+  border-bottom: 1px solid #777777;
+  }
+.play-win__form__lebel {
+  width: 460px;
+  height: 120px;
+  border: 1px dashed #777777;
+  margin-bottom: 35px;
+  position: relative;
+  input {
+    @include placeholderFonts($colorWhite);
+    margin-left: 137px;
+    margin-top: 39px;
+    background: #000000;
+    border: 1px solid black;
+    border-bottom: 1px solid #777777;
+    text-align: center;
+  }
+  p {
+    @include littleFonts($colorWhite); 
+    padding-left: 188px;
+    padding-top: 7px;
+    padding-bottom: 39px;
+  }
+}
+.play-win__block__2__btn {
+width: 192px;
+height: 59px;
+padding: 15px 50px;
+font-family: Roboto;
+font-size: 18px;
+font-weight: 700;
+line-height: 21px;
+background: #F8F200;
+color: $colorBlack;
+cursor: pointer;
+margin-bottom: 15px;
+}
+.play-win__block__2__checkbox {
+margin-right: 10px;
+margin-bottom: 70px;
+}
+.play-win__block__2__checkbox__span {
+  @include littleFonts($colorWhite);
+}
+.monitor-hp {
+  position: relative;
+  background: $colorYellow;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url(./img/after.png);
+  }
+  }
+.monitor-hp__block {
+  @include container();
+  padding-top: 70px;
+  display: flex;
+  gap: 32px;
+  padding-bottom: 70px;
+  padding-top: 140px;
+}
+.monitor-hp__block__1__img {
+padding: 26px 42px 0;
+}
+
+.monitor-hp__block__2 {
+  width: 624px;
+}
+.monitor-hp__block__2 {
+  h2 {
+    @include h2Fonts($colorBlack);
+    padding-bottom: 25px;
+  }
+  p {
+    @include  pFonts($colorBlack);
+    padding-bottom: 25px;
+  }
+  ul {
+    list-style-type: none;
+    position: relative;
+  }
+  li {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-bottom: 26px;
+  }
+  button {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    width: 194px;
+    height:59px;
+    padding: 15px 50px;
+    margin-top: 14px;
+    background: #000000;
+    color: $colorYellow;
+    cursor: pointer;
+}
+}
+.monitor-hp__block__2__li::before {
+  content: url(./img/color.png);
+  padding-right: 14px;
+}
+.monitor-hp__block__2__li__1::before {
+  content: url(./img/stars.png);
+  padding-right: 11px;
+}
+.monitor-hp__block__2__li__2::before {
+  content: url(./img/awesome_motion.png);
+  padding-right: 13px;
+}
+
+.buy-game {
+  display: flex;
+}
+.buy-game__img{
+  max-width:50%;
+}
+.buy-game__block {
+  background: $colorBlack;
+  max-width: 944px;
+  h2 {
+    @include h2Fonts($colorWhite);
+    padding: 70px 320px 25px 32px;
+  }
+  p {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    color: $colorHex;
+    padding-left: 32px;
+    padding-bottom: 15px;
+  }
+  ul {
+    list-style-type: none;
+    position: relative;
+  }
+  li {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-bottom: 26px;
+    color: $colorWhite;
+  }
+}
+.buy-game__block__li::before {
+  content: url(./img/disk.png);
+  padding-right: 13px;
+  padding-left: 32px;
+}
+.buy-game__block__li__1::before {
+  content: url(./img/wysiwyg.png);
+  padding-right: 14px;
+  padding-left: 32px;
+}
+.buy-game__block__li__2::before {
+  content: url(./img/collections.png);
+  padding-right: 13px;
+  padding-left: 32px;
+}
+.buy-game__block_p2 {
+  padding-top: 42px;
+}
+.buy-game__block__ul2 {
+  max-width: 319px;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10px;
+  padding-left: 32px;
+}
+.footer {
+  @include container();
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.footer-block__1 {
+  display: flex;
+  gap: 32px;
+}
+.footer-block__2 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #000000;
+}
+.footer-block__2__a {
+  padding-right: 32px;
+}
+.footer-bottom {
+background: $colorBlack;
+}
+.footer-bottom__p{
+  @include container();
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: center;
+  padding-top: 13px;
+  padding-bottom: 13px;  
+  color: #FFFFFF;
+}
